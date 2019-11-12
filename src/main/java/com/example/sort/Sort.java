@@ -1,5 +1,11 @@
 package com.example.sort;
 
+import org.apache.commons.lang.StringUtils;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 排序算法
  *
@@ -137,6 +143,21 @@ public class Sort {
             }
         }
         return next;
+    }
+
+    /**
+     * 将参数按字典排序
+     */
+    private String dictOrder(String... params) {
+        List<String> list = Arrays.asList(params);
+        Collections.sort(list, (o1, o2) -> (o1.compareTo(o2)));
+        StringBuffer sb = new StringBuffer();
+        for (String item : list) {
+            if (StringUtils.isNotBlank(item)) {
+                sb.append(item);
+            }
+        }
+        return sb.toString();
     }
 
 
