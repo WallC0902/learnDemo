@@ -52,8 +52,9 @@ public class LeetCode438 {
 //        System.out.println('a'-'a');
 
         List<Integer> anagrams = findAnagrams("cbaebertfsgffdfabacdfsfg", "ffgs");
-        for(int i : anagrams)
+        for (int i : anagrams) {
             System.out.println(i);
+        }
     }
 
 
