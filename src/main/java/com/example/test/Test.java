@@ -1,10 +1,11 @@
 package com.example.test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.*;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * Created by wangchangpeng on 2019/9/11.
@@ -47,7 +48,8 @@ public class Test {
     private static ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
 
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
+
+
 //        new Thread(() -> {
 //            try {
 //                for (int i = 0; i < 100; i++) {
@@ -80,6 +82,32 @@ public class Test {
 //        }, "threadLocal2").start();
     }
 
+    /**
+     * 去除字段前后空格，中间空格不处理
+     *
+     * @param content
+     * @return
+     */
+    public static String trimLeadTrail(String content) {
+//        List<String> list = Arrays.asList("　氨基酸的  asdfa  玩儿热若33  asdf  123  ", "　212 3", "森岛 帆高　", "阿斯蒂芬 为", " ");
+//        List<String> collect = list.stream().filter(str -> StringUtils.isNotBlank(str)).map(str -> trimLeadTrail(str)).collect(Collectors.toList());
+//        System.out.println(collect.size());
+//        collect.stream().forEach(str -> System.out.println(str));
+
+
+        if (StringUtils.isBlank(content)) {
+            return null;
+        }
+        // 判断全角和半角
+        while (content.startsWith(" ") || content.startsWith("　")) {
+            content = content.substring(1);
+        }
+        // 判断全角和半角
+        while (content.endsWith(" ") || content.endsWith("　")) {
+            content = content.substring(0, content.length() - 1);
+        }
+        return content;
+    }
 
 
     public static boolean zixuan() {
