@@ -71,6 +71,7 @@ public class PDFTemplateUtil {
         OutputStream out = new ByteArrayOutputStream();
         try {
             // 设置 css中 的字体样式（暂时仅支持宋体和黑体） 必须，不然中文不显示
+            // TODO 记得这个字体
             renderer.getFontResolver().addFont(getClassPath("/font/simsun.ttc"), BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
             // 设置模板的编码格式
             cfg.setEncoding(Locale.CHINA, "UTF-8");
