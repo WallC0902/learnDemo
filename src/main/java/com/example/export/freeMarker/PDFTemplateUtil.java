@@ -33,10 +33,10 @@ public class PDFTemplateUtil {
         for (int i = 0; i < 10; i++) {
             Map<String, Object> itemMap = new HashMap<>(16);
             itemMap.put("name", "姓名" + (i + 1));
-            itemMap.put("age", 14 + (i + 1));
+            itemMap.put("age", 12 + i);
             itemMap.put("gender", i % 2 == 0 ? "男" : "女");
-            itemMap.put("point", 80 + (i + 1));
-            itemMap.put("address", "这个是地址哦-" + (i + 1));
+            itemMap.put("point", 80 + i);
+            itemMap.put("address", "这个是地址哦-" + i);
             list.add(itemMap);
         }
         data.put("dataList", list);
