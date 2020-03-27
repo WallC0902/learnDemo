@@ -48,7 +48,7 @@ public class Test {
     private static ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
 
     public static void main(String[] args) {
-
+        System.out.println(returnTest("14"));
 
 //        new Thread(() -> {
 //            try {
@@ -81,6 +81,24 @@ public class Test {
 //            }
 //        }, "threadLocal2").start();
     }
+
+    private static String returnTest(String str) {
+        returnTest2(str);
+        if (str.equals("14")) {
+            System.out.println("111111");
+            return "16";
+        }
+        return null;
+    }
+
+    private static String returnTest2(String str) {
+        if (str.equals("10")) {
+            System.out.println("22222222");
+            return "12";
+        }
+        return null;
+    }
+
 
     /**
      * 去除字段前后空格，中间空格不处理
