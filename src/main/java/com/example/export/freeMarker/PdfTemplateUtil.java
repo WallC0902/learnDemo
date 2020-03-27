@@ -16,7 +16,7 @@ import static com.example.export.word.FtlToWordUtil.imageToBase64Str;
  * @author: Wangchangpeng
  * @create: 2020-03-27
  **/
-public class PDFTemplateUtil {
+public class PdfTemplateUtil {
 
     public static void main(String[] args) throws Exception {
         // 模板中的数据，实际运用从数据库中查询
@@ -30,7 +30,7 @@ public class PDFTemplateUtil {
         data.put("three", 85);
 
         List<Map<String, Object>> list = new ArrayList<>(16);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             Map<String, Object> itemMap = new HashMap<>(16);
             itemMap.put("name", "姓名" + (i + 1));
             itemMap.put("age", 12 + i);
@@ -42,10 +42,16 @@ public class PDFTemplateUtil {
         data.put("dataList", list);
         data.put("imageUrl", "data:image/jpeg;base64," + imageToBase64Str(getClassPath("/timg.jpeg")));
 
-        ByteArrayOutputStream pdf = PDFTemplateUtil.createPDF(data, "testExport.ftl");
+        ByteArrayOutputStream pdf = PdfTemplateUtil.createPDF(data, "testExport.ftl");
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = new FileOutputStream(getClassPath("/freeMark.pdf"));
+//            File pdfFile = new File(getClassPath("/freeMark.pdf"));
+//            File pdfFile = new File("/Users/wall/Develop/Code/learnDemo/src/main/resources/freeMark.pdf");
+//            if (!pdfFile.exists()) {
+//                pdfFile.createNewFile();
+//            }
+//            fileOutputStream = new FileOutputStream(pdfFile);
+            fileOutputStream = new FileOutputStream("/Users/wall/Develop/Code/learnDemo/src/main/resources/freeMark.pdf");
             fileOutputStream.write(pdf.toByteArray());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -66,7 +72,7 @@ public class PDFTemplateUtil {
         // 创建一个FreeMarker实例, 负责管理FreeMarker模板的Configuration实例
         Configuration cfg = new Configuration();
         // 指定FreeMarker模板文件的位置
-        cfg.setClassForTemplateLoading(PDFTemplateUtil.class, "/");
+        cfg.setClassForTemplateLoading(PdfTemplateUtil.class, "/");
         ITextRenderer renderer = new ITextRenderer();
         OutputStream out = new ByteArrayOutputStream();
         try {
@@ -104,7 +110,7 @@ public class PDFTemplateUtil {
     }
 
     public static String getClassPath(String name) {
-        String path = PDFTemplateUtil.class.getResource(name).getPath();
+        String path = PdfTemplateUtil.class.getResource(name).getPath();
         System.out.println(name + "相对应的文件目录: " + path);
         return path;
     }
