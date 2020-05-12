@@ -30,7 +30,7 @@ public class PdfTemplateUtil {
         data.put("three", 85);
 
         List<Map<String, Object>> list = new ArrayList<>(16);
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             Map<String, Object> itemMap = new HashMap<>(16);
             itemMap.put("name", "姓名" + (i + 1));
             itemMap.put("age", 12 + i);
@@ -42,7 +42,7 @@ public class PdfTemplateUtil {
         data.put("dataList", list);
         data.put("imageUrl", "data:image/jpeg;base64," + imageToBase64Str(getClassPath("/timg.jpeg")));
 
-        ByteArrayOutputStream pdf = PdfTemplateUtil.createPDF(data, "testExport.ftl");
+        ByteArrayOutputStream pdf = PdfTemplateUtil.createPDF(data, "model.ftl");
         FileOutputStream fileOutputStream = null;
         try {
 //            File pdfFile = new File(getClassPath("/freeMark.pdf"));
@@ -52,6 +52,25 @@ public class PdfTemplateUtil {
 //            }
 //            fileOutputStream = new FileOutputStream(pdfFile);
             fileOutputStream = new FileOutputStream("/Users/wall/Develop/Code/learnDemo/src/main/resources/freeMark.pdf");
+            fileOutputStream.write(pdf.toByteArray());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void render(String templateName, String outFileName, Map<String, Object> data) throws Exception {
+        ByteArrayOutputStream pdf = PdfTemplateUtil.createPDF(data, templateName);
+        FileOutputStream fileOutputStream = null;
+        try {
+            File pdfFile = new File("/Users/wall/Develop/Code/learnDemo/src/main/resources/" + outFileName);
+            if (!pdfFile.exists()) {
+                pdfFile.createNewFile();
+            }
+            fileOutputStream = new FileOutputStream(pdfFile);
+//            fileOutputStream = new FileOutputStream("/Users/wall/Develop/Code/learnDemo/src/main/resources/" + outFileName);
             fileOutputStream.write(pdf.toByteArray());
         } catch (FileNotFoundException e) {
             e.printStackTrace();

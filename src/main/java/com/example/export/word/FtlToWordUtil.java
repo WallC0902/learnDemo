@@ -239,24 +239,48 @@ public class FtlToWordUtil {
 
     public static void main(String[] args) throws IOException {
         Map<String, Object> dataMap = new HashMap<>();
+//        List<Map<String, Object>> list = new ArrayList<>(16);
+//        for (int i = 0; i < 10; i++) {
+//            Map<String, Object> itemMap = new HashMap<>(16);
+//            itemMap.put("name", "姓名" + (i + 1));
+//            itemMap.put("age", 14 + (i + 1));
+//            itemMap.put("sex", i % 2 == 0 ? "男" : "女");
+//            itemMap.put("point", 80 + (i + 1));
+//            itemMap.put("address", "这个是地址哦-" + (i + 1));
+//            list.add(itemMap);
+//        }
+//
+//        dataMap.put("itemList", list);
+
+
+//        dataMap.put("title", "我是替换后的标题");
+//        dataMap.put("txt", "我是被替换后的普通文本");
+//        //图片转码
+//        dataMap.put("imageUrl", imageToBase64Str("/Users/wall/Develop/Code/learnDemo/src/main/resources/timg.jpeg"));
+
+
         List<Map<String, Object>> list = new ArrayList<>(16);
         for (int i = 0; i < 10; i++) {
             Map<String, Object> itemMap = new HashMap<>(16);
-            itemMap.put("name", "姓名" + (i + 1));
-            itemMap.put("age", 14 + (i + 1));
-            itemMap.put("sex", i % 2 == 0 ? "男" : "女");
-            itemMap.put("point", 80 + (i + 1));
-            itemMap.put("address", "这个是地址哦-" + (i + 1));
+            itemMap.put("name", "APP代码定制开发" + (i + 1));
+            itemMap.put("num", 20000 + (i + 1));
+            itemMap.put("type", 6);
             list.add(itemMap);
         }
 
-        dataMap.put("itemList", list);
-        dataMap.put("title", "我是替换后的标题");
-        dataMap.put("txt", "我是被替换后的普通文本");
-        //图片转码
-        dataMap.put("imageUrl", imageToBase64Str("/Users/wall/Develop/Code/learnDemo/src/main/resources/timg.jpeg"));
+        dataMap.put("dataList", list);
+//        1 APP代码定制开发 20000 6
+//        2 APP面板定制开发 10000 3
+//        3 APPUI定制 10000 3
+//        4 固件定制 5000 2
+//        5 APP上架 2000 1
+//        6 APP与硬件联调 6000 2.5
 
-        createWord(dataMap, "/Users/wall/Develop/Code/learnDemo/src/main/resources/", "model.ftl", "/Users/wall/Develop/Code/learnDemo/src/main/resources/test.docx");
+
+        dataMap.put("jiafang", "我是被替换后的普通文本22222222");
+
+//        createWord(dataMap, "/Users/wall/Develop/Code/learnDemo/src/main/resources/", "model.ftl", "/Users/wall/Develop/Code/learnDemo/src/main/resources/test.docx");
+        createWord(dataMap, "/Users/wall/Develop/Code/learnDemo/src/main/resources/", "666666666.xml", "/Users/wall/Develop/Code/learnDemo/src/main/resources/test.docx");
 //        makePdfByXcode("/Users/wall/Develop/Code/learnDemo/src/main/resources/test.docx", "/Users/wall/Develop/Code/learnDemo/src/main/resources/test.pdf");
 
         System.out.println("模板生成成功");

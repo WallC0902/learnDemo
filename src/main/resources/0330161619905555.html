@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <title>保密合约</title>
+    <meta name="Generator" content="Cocoa HTML Writer"/>
+    <meta name="CocoaVersion" content="1671.2"/>
+    <style type="text/css">
+        p.p1 {
+            margin: 0.0px 0.0px 24.0px 0.0px;
+            text-align: center;
+            line-height: 33.0px;
+            font: 24.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p2 {
+            margin: 0.0px 0.0px 24.0px 224.0px;
+            text-align: center;
+            text-indent: 32.0px;
+            line-height: 22.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p3 {
+            margin: 0.0px 0.0px 12.0px 0.0px;
+            line-height: 22.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p4 {
+            margin: 0.0px 0.0px 0.0px 6.0px;
+            line-height: 22.0px;
+            font: 16.0px 'Songti SC';
+            color: #000000;
+            -webkit-text-stroke: #000000
+        }
+
+        p.p5 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 22.0px;
+            font: 16.0px 'Songti SC';
+            color: #000000;
+            -webkit-text-stroke: #000000
+        }
+
+        p.p6 {
+            margin: 0.0px 0.0px 0.0px 6.0px;
+            line-height: 18.0px;
+            font: 16.0px 'Times New Roman';
+            color: #000000;
+            -webkit-text-stroke: #000000
+        }
+
+        p.p7 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 18.0px;
+            font: 16.0px 'Times New Roman';
+            color: #000000;
+            -webkit-text-stroke: #000000
+        }
+
+        p.p8 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 22.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p9 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 18.0px;
+            font: 16.0px 'Times New Roman';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p10 {
+            margin: 0.0px 0.0px 12.0px 0.0px;
+            line-height: 18.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p11 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 16.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434;
+            background-color: #ffffff
+        }
+
+        p.p12 {
+            margin: 0.0px 0.0px 12.0px 0.0px;
+            line-height: 16.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434;
+            background-color: #ffffff
+        }
+
+        p.p13 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 16.0px;
+            font: 16.0px 'Times New Roman';
+            color: #343434;
+            -webkit-text-stroke: #343434;
+            background-color: #ffffff
+        }
+
+        p.p14 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 18.0px;
+            font: 16.0px 'Songti SC';
+            color: #343434;
+            -webkit-text-stroke: #343434
+        }
+
+        p.p15 {
+            margin: 0.0px 0.0px 0.0px 18.9px;
+            line-height: 16.0px;
+            font: 16.0px 'Times New Roman';
+            color: #343434;
+            -webkit-text-stroke: #343434;
+            background-color: #ffffff
+        }
+
+        p.p16 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 18.0px;
+            font: 16.0px 'Times New Roman';
+            color: #fb0007;
+            -webkit-text-stroke: #fb0007
+        }
+
+        p.p17 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            line-height: 14.0px;
+            font: 12.0px 'Songti SC';
+            color: #0000e9;
+            -webkit-text-stroke: #0000e9
+        }
+
+        span.s1 {
+            font-kerning: none;
+            background-color: #ffffff
+        }
+
+        span.s2 {
+            font-kerning: none
+        }
+
+        span.s3 {
+            text-decoration: underline;
+            font-kerning: none
+        }
+
+        span.s4 {
+            text-decoration: line-through;
+            font-kerning: none
+        }
+
+        span.s5 {
+            font: 16.0px Times;
+            font-kerning: none
+        }
+
+        span.s6 {
+            font: 16.0px 'Songti SC';
+            font-kerning: none
+        }
+
+        span.s7 {
+            font: 16.0px 'Times New Roman';
+            font-kerning: none
+        }
+
+        span.s8 {
+            font: 16.0px 'Times New Roman';
+            font-kerning: none;
+            background-color: #ffffff
+        }
+
+        span.s9 {
+            font-kerning: none;
+            color: #000000;
+            -webkit-text-stroke: 0px #000000
+        }
+
+        span.s10 {
+            text-decoration: underline;
+            font-kerning: none;
+            color: #000000;
+            -webkit-text-stroke: 0px #000000
+        }
+
+        span.s11 {
+            font: 12.0px Times;
+            text-decoration: underline;
+            font-kerning: none;
+            color: #0000e9;
+            -webkit-text-stroke: 0px #0000e9
+        }
+
+        span.s12 {
+            font: 12.0px 'Songti SC';
+            text-decoration: underline;
+            font-kerning: none;
+            color: #0000e9;
+            -webkit-text-stroke: 0px #0000e9
+        }
+
+        span.s13 {
+            font: 12.0px Times;
+            font-kerning: none;
+            color: #ffffff;
+            -webkit-text-stroke: 0px #ffffff
+        }
+
+        table.t1 {
+            margin: 0.0px 0.0px 0.0px 1.9px;
+            border-collapse: collapse
+        }
+
+        table.t2 {
+            margin: 0.0px 0.0px 0.0px 3.9px;
+            border-collapse: collapse
+        }
+
+        td.td1 {
+            width: 275.1px;
+            padding: 0.0px 1.9px 0.0px 1.9px
+        }
+
+        td.td2 {
+            width: 274.1px;
+            padding: 0.0px 1.9px 0.0px 1.9px
+        }
+    </style>
+</head>
+<body>
+<p class="p1"><span class="s1">保密合约</span></p>
+<p class="p2"><span class="s2">签约日期：</span></p>
+<p class="p3"><span class="s1"><b>合约当事人</b></span></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+    <tbody>
+    <tr>
+        <td valign="top" class="td1">
+            <p class="p4"><span class="s2">甲方：</span></p>
+        </td>
+        <td valign="top" class="td1">
+            <p class="p5"><span class="s2">乙方：</span><span class="s3">杭州涂鸦信息技术有限公司</span><span
+                    class="s4">杭州爱相集科技有限公司</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td1">
+            <p class="p4"><span class="s2">地址：</span></p>
+        </td>
+        <td valign="top" class="td1">
+            <p class="p5"><span class="s2">地址：杭州市古墩路87号浙商财富中心3号楼701室</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td1">
+            <p class="p4"><span class="s2">联络人：</span></p>
+        </td>
+        <td valign="top" class="td1">
+            <p class="p4"><span class="s2">联络人：</span><span class="s5"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td1">
+            <p class="p4"><span class="s2">电话：</span></p>
+        </td>
+        <td valign="top" class="td1">
+            <p class="p4"><span class="s2">电话：</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td1">
+            <p class="p6"><span class="s2">Email</span><span class="s6">：</span></p>
+        </td>
+        <td valign="top" class="td1">
+            <p class="p6"><span class="s2">Email</span><span class="s6">：</span><span class="s5"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p class="p7"><span class="s2"> </span></p>
+<p class="p8"><span class="s2">    甲、乙双方基于</span><span class="s7">______________</span><span class="s2">项目合作之目的，为明确双方的保密义务，有效保护双方的商业秘密、资料，防止被公开披露或以任何形式泄露。根据相关法律法规的规定，就保护该项目实施及合作过程中向对方提供有关保密信息、商业秘密、资料等事宜，经双方友好协商，签署本保密合约（</span><span
+        class="s7">“</span><span class="s2"><b>本合约</b></span><span class="s7">”</span><span class="s2">）。</span></p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s1"><b>第</b></span><span class="s8"><b>1</b></span><span class="s1"><b>条</b></span><span
+        class="s8"><b>: </b></span><span class="s1"><b>定义</b></span></p>
+<p class="p10"><span class="s8">1.1</span><span class="s1">除本合约另有规定外，下列名词依本条定义解释。</span></p>
+<p class="p11"><span class="s7">1.2“</span><span class="s2">甲方</span><span class="s7">”</span><span
+        class="s2">或</span><span class="s7">“</span><span class="s2">乙方</span><span class="s7">”</span><span class="s2">系指：</span>
+</p>
+<p class="p11"><span class="s7">(1) </span><span class="s2">本合约签约主体；</span></p>
+<p class="p11"><span class="s7">(2) </span><span class="s2">本合约签约主体现在与未来在各国、各地区所组设的公司、办事处、工厂、营业组织；</span></p>
+<p class="p12"><span class="s7">(3) </span><span class="s2">本合约签约主体之其它关联企业。</span></p>
+<p class="p11"><span class="s7">1.3“</span><span class="s2">关联企业</span><span class="s7">”</span><span class="s2">系指以下任何形态的营业组织：</span>
+</p>
+<p class="p11"><span class="s7">(1) </span><span class="s2">直接或间接地控制本合约签约主体；</span></p>
+<p class="p11"><span class="s7">(2) </span><span class="s2">直接或间接地受本合约签约主体控制；<span
+        class="Apple-converted-space"> </span></span></p>
+<p class="p11"><span class="s7">(3) </span><span class="s2">与本合约签约主体同受某一企业控制。</span></p>
+<p class="p13"><span class="s2"> </span></p>
+<p class="p10"><span class="s8">1.4“</span><span class="s1">权利方</span><span class="s8">”</span><span class="s1">系指双方中有权提供或揭露保密资料的一方；</span><span
+        class="s8">“</span><span class="s1">义务方</span><span class="s8">”</span><span class="s1">系指双方中因接收、管理、使用、掌握或知悉保密资料而负有保密义务的一方。</span>
+</p>
+<p class="p14"><span class="s8">1.5“</span><span class="s1">保密资料</span><span class="s8">”</span><span class="s1">系指如下有形或无形信息和数据，而不论该信息或数据以何种形式储存、编辑：</span>
+</p>
+<p class="p11"><span class="s7">(1) </span><span class="s2">一方所享有或控制的任何信息或数据，包括但不限于程序、制程、方案、结构、原型、数据、软件、报告、策略、计划、装置、价格、需求预测、产品规格、图样、设计、模型、样品、代码、发明、技术、质量控制、营运、采购、营销、规格、制造方法、工艺流程、概念、发现、提案、模具、原始码、目的码、著作原件、操作手册、系统文件、输出格式、输入格式、档案结构、程序说明表、质量数据、专有技术、客户信息和数据、产品开发计划、生产排配、检测数据、建厂数据、产能计划、投资数据（讯）、合作数据（讯）、人力布局、计划中的诉讼、销售数据、技术数据、财务及法务数据文件、人事数据与经营数据，以及依约或依法负有保密义务而有关之保密信息；</span>
+</p>
+<p class="p11"><span class="s7">(2) </span><span class="s2">双方之间的讨论、协商、谈判、交流、协议等；</span></p>
+<p class="p11"><span class="s7">(3) </span><span class="s2">专利权、商标权、著作权、工业设计、专门技术、营业秘密及（或）集成电路布局及其所含盖的标的、权能、实施权及申请权、注册权或登记权，以及其它不以注册或登记为要件之专属权利；<span
+        class="Apple-converted-space"> </span></span></p>
+<p class="p11"><span class="s7">(4) </span><span class="s2">任何与一方公司有关之信息，包括公司的设施部署、设备、操作等数据与信息等。如保密资料</span><span
+        class="s7">(i)</span><span class="s2">以书面、电子或其它有形形式作出，权利方应以显著方式作出</span><span class="s7">“</span><span
+        class="s2">保密</span><span class="s7">”</span><span class="s2">或其它类似标示；</span><span class="s7">(ii)</span><span
+        class="s2">若以口头形式作出，权利方应于揭露时即口头声明其保密性，并于揭露后</span><span class="s7">30</span><span class="s2">日内以书面文件向义务方予以确认，该书面文件应包含前述保密资料之概要且应以显著方式作出</span><span
+        class="s7">“</span><span class="s2">保密</span><span class="s7">”</span><span class="s2">或其它类似标示。</span></p>
+<p class="p7"><span class="s2"> </span></p>
+<p class="p8"><span class="s1"><b>第</b></span><span class="s8"><b>2</b></span><span class="s1"><b>条</b></span><span
+        class="s8"><b>: </b></span><span class="s1"><b>保密义务</b></span></p>
+<p class="p11"><span class="s7">2.1</span><span class="s2">义务方保证自接收、管理、使用、掌握或知悉保密数据之日起至合作届满后三年内，严格保守保密资料的机密性：</span></p>
+<p class="p11"><span class="s7">(1) </span><span class="s2">未经权利方事先书面同意，不得将该保密资料泄漏或交付予任何第三方；</span></p>
+<p class="p11"><span class="s7">(2) </span><span class="s2">仅将保密资料揭露予为执行本合约之目的，而有直接得知该保密资料之必要的员工及董监事（包括但不限于义务方在各国、各地区所组设之公司、办事处、工厂、营业组织，及其关联企业、关系人或集团公司的员工及董监事）、代理商或顾问，但义务方应与该员工、董监事、代理商及顾问签订不低于本合约标准之保密合约；</span>
+</p>
+<p class="p11"><span class="s7">(3) </span><span class="s2">除为履行本合约之目的而为必要之复制外，未经权利方明确书面同意，不得随意复制保密资料或为其它衍生行为；</span>
+</p>
+<p class="p11"><span class="s7">(4) </span><span class="s2">采取保护自身之同类性质保密资料之同等保护程度，但不得低于合理的保护程度，保管该保密资料；</span></p>
+<p class="p11"><span class="s7">(5) </span><span class="s2">如遇保密资料被不当使用或揭露时，应立即通知权利方并采取合理措施以重新保障保密资料的机密性，防止保密资料被进一步不当使用、揭露及其它违约行为的发生；</span>
+</p>
+<p class="p12"><span class="s7">(6) </span><span class="s2">不得将保密资料用于权利方同意之外的任何目的。</span></p>
+<p class="p10"><span class="s8">2.2</span><span class="s1">若义务方基于法律、司法机关或行政机关之命令、要求而揭露，义务方应立即将该种命令、要求书面通知权利方，以使权利方能于保密资料被揭露前获得合理的反应机会及采取相应补救措施。若于上述补救措施采取后，义务方仍不得不依据上述命令、要求而揭露时，义务方保证，其所揭露之保密资料将严格限于被明确要求且不得不揭露的范围及程度。</span>
+</p>
+<p class="p14"><span class="s8">2.3</span><span class="s1">双方应负责使其办事处、工厂、关联企业、关系人与集团企业暨其员工、董监事及所聘雇的专业人士遵守本合约，如有违反视同违约，且负连带责任。一方若擅自向第三人告知、传播、或以任何方式提供保密资料，或自行、利用他人名义买卖与并购（含合并、收购及分割）或股份移转案相关之所有公司之股票及其它具有股权性质之有价证券，除应承担本合约之违约责任外，若涉及不法行为，应承担全部法律责任。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s1"><b>第</b></span><span class="s8"><b>3</b></span><span class="s1"><b>条</b></span><span
+        class="s8"><b>: </b></span><span class="s1"><b>免责条款</b></span></p>
+<p class="p11"><span class="s7">3.1</span><span class="s2">如义务方有足够的证据证明权利方之保密资料为下列信息之一者，则义务方对该信息不负保密义务：</span></p>
+<p class="p11"><span class="s7">(1) </span><span class="s2">该信息为义务方在不违反本合约义务的情况下从公共领域获得；</span></p>
+<p class="p11"><span class="s7">(2) </span><span class="s2">该信息为义务方于权利方揭露该信息之前合法获得，且无保密义务者；</span></p>
+<p class="p11"><span class="s7">(3) </span><span class="s2">该信息由义务方在未使用权利方保密资料且未违反本合约所约定之义务前提下，独立开发所得；</span></p>
+<p class="p11"><span class="s7">(4) </span><span class="s2">该信息由义务方于第三方处获得，且该第三方就该信息对权利方无保密义务；</span></p>
+<p class="p11"><span class="s7">(5) </span><span class="s2">该信息由权利方书面授权公开或泄漏。</span></p>
+<p class="p15"><span class="s2"> </span></p>
+<p class="p8"><span class="s1"><b>第</b></span><span class="s8"><b>4</b></span><span class="s1"><b>条</b></span><span
+        class="s8"><b>: </b></span><span class="s1"><b>权利归属</b></span></p>
+<p class="p10"><span class="s8">4.1</span><span class="s1">义务方所接收或知悉之保密资料的权利及利益，仍属权利方之财产；义务方应于权利方请求时，将该保密资料及其复制物、衍生物悉数立即返还权利方或依权利方要求销毁，并出具切结书予权利方，述明上述资料销毁情形。</span>
+</p>
+<p class="p10"><span class="s8">4.2</span><span class="s1">上述返还或销毁之义务，亦适用于义务方所聘雇之专业人士所为之分析中含有或引用、复制、改编保密资料者或任何与其所持有之保密资料之任何复本或载体。义务方应确保其所聘请之专业人士遵守上述义务。</span>
+</p>
+<p class="p14"><span class="s8">4.3</span><span class="s1">权利方提供或揭露保密资料予义务方并不构成任何权利或利益之授权、处分、让与、或出租，且该保密资料提供或揭露亦不构成权利方对其价值、准确性、完整性或适于某特定用途之任何保证。义务方因信任该保密资料所为任何行为均与权利方无涉。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p14"><span class="s8">4.4</span><span class="s1">权利方提供的保密信息，如涉及侵犯第三方知识产权的情况，义务方不对此侵权行为负责，且免于由此产生的一切索赔。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>5</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>违约责任</b></span></p>
+<p class="p14"><span class="s7">5.1</span><span class="s2">义务方如违反本合约之任何义务，应立即停止侵害，并在第一时间采取一切措施防止保密信息的扩散，尽可能消除影响。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p14"><span class="s7">5.2</span><span class="s2">义务方如违反本合约之任何义务，应赔偿权利方由此产生的一切损失（包括但不限于为采取防止保密信息扩散、消除影响支出的所有费用，实现权利支出的律师费、诉讼费、保全费、公证费）。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>6</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>通知</b></span></p>
+<p class="p14"><span class="s7">6.1</span><span class="s2">除双方另有约定外，依本合约所需之通知以电话、传真、电子邮件、</span><span
+        class="s7">EDI</span><span class="s2">或亲自送达时，自送达时生效；通知以国内快递方式送达者，自寄送翌日视为送达；通知以国内邮件送达者，自寄送日起算第三日视为送达；通知以国际快递或邮件送达者，自寄送日起算第五日视为送达。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>7</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>合约修订</b></span></p>
+<p class="p14"><span class="s7">7.1</span><span class="s2">本合约之附件构成本合约之一部份，如有冲突，以本合约条款为准。对本合约所为之任何修正、更改或增删，非经双方签署确认，不发生效力。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>8</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>准据法</b></span></p>
+<p class="p14"><span class="s7">8.1</span><span class="s2">本合约之成立、生效、解释及履行，均依据中华人民共和国相关法律规定。</span></p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>9</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>争端解决</b></span></p>
+<p class="p14"><span class="s7">9.1</span><span class="s2">本合约当事人就任何因本合约、订单或附件之条款或违约所生之争议或请求，应以友好协商方式解决此等争议。如当事人无法协商解决争议，则该等争议管辖法院</span><span
+        class="s9">为</span><span class="s10">杭州市西湖区人民法院。</span></p>
+<p class="p16"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>10</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>合约效力</b></span></p>
+<p class="p14"><span class="s7">10.1</span><span class="s2">本合约自双方签字盖章之日起生效，如本合约首页所列之签约日期与双方签署日期不同，以时间在前者为准。本合约效力涵盖至本合约相关条款所述之关联企业。</span>
+</p>
+<p class="p9"><span class="s2"> </span></p>
+<p class="p8"><span class="s2"><b>第</b></span><span class="s7"><b>11</b></span><span class="s2"><b>条</b></span><span
+        class="s7"><b>: </b></span><span class="s2"><b>合约收执</b></span></p>
+<p class="p14"><span class="s7">11.1</span><span class="s2">本合约一式</span><span class="s3">贰</span><span class="s2">份，甲、乙双方各执一份，具有同等法律效力。</span>
+</p>
+<p class="p9"><span class="s2"><b> </b></span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+    <tbody>
+    <tr>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">甲方</span><span class="s1">：</span><span class="s2"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">乙方</span><span class="s1">：</span><span class="s3">杭州涂鸦信息技术有限公司</span><span
+                    class="s4">杭州爱相集科技有限公司</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">授权签署人</span><span class="s1">：</span></p>
+        </td>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">授权签署人</span><span class="s1">：</span><span class="s5"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">姓名：</span></p>
+        </td>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">姓名：</span><span class="s5"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">日期</span><span class="s1">：</span><span class="s5"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+        <td valign="top" class="td2">
+            <p class="p5"><span class="s2">日期</span><span class="s1">：</span><span class="s5"><span
+                    class="Apple-converted-space"> </span></span></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
